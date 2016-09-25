@@ -3,6 +3,10 @@ package binary
 import "math"
 
 func PaddedBinaryArray(source []int, length int) []int {
+	if len(source) == length {
+		return source
+	}
+
 	arr := make([]int, length, length)
 
 	for i := 0; i < len(source); i++ {
