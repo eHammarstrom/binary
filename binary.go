@@ -10,7 +10,7 @@ func PaddedBinaryArray(source []int, length int) []int {
 	arr := make([]int, length, length)
 
 	for i := 0; i < len(source); i++ {
-		arr[len(arr)-1-i] = source[i]
+		arr[len(arr)-1-i] = source[len(source)-1-i]
 	}
 
 	return arr
@@ -20,7 +20,9 @@ func IntToBinaryArray(x int) []int {
 	arrLen := int(math.Ceil(math.Log2(float64(x + 1))))
 	arr := make([]int, arrLen, arrLen)
 
-	if x%2 == 0 {
+	if x == 0 {
+		return arr
+	} else if x%2 == 0 {
 		arr[int(math.Log2(float64(x)))] = 1
 		return reverseArray(arr)
 	}
@@ -32,7 +34,7 @@ func IntToBinaryArray(x int) []int {
 		}
 	}
 
-	return arr
+	return reverseArray(arr)
 }
 
 func BinaryArrayToInt(arr *[]int) int {
