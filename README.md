@@ -1,6 +1,6 @@
 # binary
 
-Written in conjunction with celltomaton, these binary operations are used by celltomaton (one-dimensional cellular automata generation)
+Binary operations written in conjunction with and used by [celltomaton](https://github.com/initiumSrc/celltomaton).
 
 ## Installation
 
