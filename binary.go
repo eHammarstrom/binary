@@ -22,19 +22,18 @@ func IntToBinaryArray(x int) []int {
 
 	if x == 0 {
 		return arr
-	} else if x%2 == 0 {
-		arr[int(math.Log2(float64(x)))] = 1
-		return reverseArray(arr)
 	}
 
 	for i := 0; i < arrLen; i++ {
 		if x >= int(math.Pow(2, float64(arrLen-1-i))) {
 			arr[i] = 1
 			x = x - int(math.Pow(2, float64(arrLen-1-i)))
+		} else if x == 0 {
+			return arr
 		}
 	}
 
-	return reverseArray(arr)
+	return arr
 }
 
 func BinaryArrayToInt(arr *[]int) int {
